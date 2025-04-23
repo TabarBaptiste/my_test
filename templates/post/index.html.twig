@@ -3,16 +3,17 @@
 {% block title %}Hello AccueilController!{% endblock %}
 {% block body %}
 <div class="container">
-    <h1>Liste des produits</h1>
+    <h1>Liste des articles</h1>
     <div class="row">
-        {% for articles in articless %}
+        {% for article in articles %}
         <div class="col-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="card-title">{{ articles.title }}</h2>
-                    <p class="card-text">{{ articles.description }}</p>
-                    <p class="card-text">{{ articles.dateCreated|date('d/m/Y') }}</p>
-                    <p class="btn btn-primary"><a href="{{ path('app_product_show', {'id': articles.id}) }}">Détails du articles</a></p>
+                    <h2 class="card-title">{{ article.title }}</h2>
+                    <p class="card-text">{{ article.description }}</p>
+                    <p class="card-text">{{ article.dateCreated|date('d/m/Y') }}</p>
+                    <p class="btn btn-primary"><a href="{{ path('app_product_show', {'id': article.id}) }}">Détails du article</a></p>
+                    <p class="card-text">{{ article.categorie}}</p>
                 </div>
             </div>
         </div>
