@@ -10,7 +10,6 @@ Ce fichier est un pense-bête pour retrouver facilement les commandes Symfony co
 - Symfony CLI installé (`symfony`)
 - Composer
 - MySQL ou PostgreSQL (ou autre)
-- Un fichier `.env` ou `.env.dev` bien configuré
 
 ---
 
@@ -65,7 +64,7 @@ Une classe est générée dans src/DataFixtures/. Tu peux y injecter les reposit
 ```php
 use Faker\Factory;
 
-public function load(ObjectManager $manager): void
+public function load(ObjectManager $manager)
 {
     $faker = Factory::create('fr_FR');
 
@@ -81,24 +80,23 @@ public function load(ObjectManager $manager): void
 }
 ```
 ### C. Charger les fixtures en base
-bash
-php bin/console doctrine:fixtures:load
-🧨 Attention : cela vide la base avant de la remplir à nouveau.
-
-## 🧹 7. Mettre à jour la base de données
 ```bash
 php bin/console doctrine:fixtures:load
+
+> yes
 ```
+🧨 Attention : cela vide la base avant de la remplir à nouveau.
+
 ## 📚 Autres commandes utiles
 
 | Commande                                  | Description                                                |
 |-------------------------------------------|------------------------------------------------------------|
 | `symfony serve`                           | Démarre le serveur local Symfony                           |
-| `symfony serve -d`                        | Démarre Symfony en arrière-plan                            |
-| `php bin/console debug:router`            | Liste toutes les routes disponibles                        |
 | `php bin/console cache:clear`             | Vide le cache Symfony                                      |
 | `php bin/console make:form`               | Génère un formulaire Symfony                               |
 | `php bin/console make:crud`               | Crée tout le CRUD (entité, contrôleur, formulaire, vues)   |
+| `symfony serve -d`                        | Démarre Symfony en arrière-plan                            |
+| `php bin/console debug:router`            | Liste toutes les routes disponibles                        |
 
 
 ## 🔁 Exemple complet de flux de travail
