@@ -12,7 +12,7 @@
                     <h2 class="card-title">{{ produit.title }}</h2>
                     <p class="card-text">{{ produit.description }}</p>
                     <p class="card-text">{{ produit.dateCreated|date('d/m/Y') }}</p>
-                    <p class="btn btn-primary"><a href="{{ path('app_product_show', {'id': produit.id}) }}">Détails du produit</a></p>
+                    <a href="{{ path('app_product_show', {'id': produit.id}) }}"><p class="btn btn-primary">Détails du produit</p></a>
                 </div>
             </div>
         </div>

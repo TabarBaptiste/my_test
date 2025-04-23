@@ -11,6 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ProductType extends AbstractType
 {
@@ -33,7 +34,7 @@ class ProductType extends AbstractType
                     'placehoder' => 'Description descriptive'
                 ]
             ])
-            ->add('dateCreated', null, [
+            ->add('dateCreated', DateType::class, [
                 'widget' => 'single_text',
             ])
             ->add('Enregistrer', SubmitType::class)

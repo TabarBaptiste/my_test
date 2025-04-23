@@ -87,6 +87,37 @@ php bin/console doctrine:fixtures:load
 ```
 🧨 Attention : cela vide la base avant de la remplir à nouveau.
 
+## 🧾 7. Créer un formulaire Symfony
+```bash
+php bin/console make:form
+```
+👉 Tu choisis l’entité liée, Symfony génère un fichier dans src/Form/.
+
+## 🔧 8. Créer un CRUD complet
+```bash
+php bin/console make:crud
+```
+👉 Cela génère :
+- Un contrôleur avec les méthodes classiques (index, new, edit, delete, show)
+- Les vues Twig dans templates/
+- Le formulaire associé
+- Le Repository si besoin
+
+## 👤 9. Créer une entité User avec sécurité
+```bash
+php bin/console make:user
+```
+Tu choisis :
+- Le nom de la classe (User)
+- Si elle peut se connecter (implémentation de UserInterface)
+- Les rôles (ex: ROLE_USER, ROLE_ADMIN)
+
+### 🔐 Ensuite, crée une migration :
+```bash
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+```
+
 ## 📚 Autres commandes utiles
 
 | Commande                                  | Description                                                |
@@ -116,3 +147,6 @@ Ne mets jamais de mots de passe dans Git
 Chaque entité peut avoir son propre Repository
 
 Toujours faire `make:migration` puis `migrate` après avoir modifié une entité
+
+
+<!-- Ajoute les commandes pour Création de formulaire,Création de CRUD, Création de User(avec rappel de migration) -->
