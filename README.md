@@ -16,7 +16,7 @@ Ce fichier est un pense-bête pour retrouver facilement les commandes Symfony co
 ## 📄 Configuration du `.env` (ex: `.env.dev`)
 
 ```env
-DATABASE_URL="mysql://root:root@127.0.0.1:3306/nom_de_la_bdd"
+DATABASE_URL="mysql://roott@127.0.0.1:3306/nom_de_la_bdd"
 ```
 🔐 Ne jamais versionner .env.local (ajoute-le dans .gitignore) car il contient des infos sensibles.
 
@@ -111,6 +111,11 @@ Tu choisis :
 - Le nom de la classe (User)
 - Si elle peut se connecter (implémentation de UserInterface)
 - Les rôles (ex: ROLE_USER, ROLE_ADMIN)
+
+## 10. Création de test
+```bash
+php bin/console make:test
+```
 
 ### 🔐 Ensuite, crée une migration :
 ```bash

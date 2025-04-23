@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticlesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,11 +25,22 @@ class Articles
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateCreated = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $auteur = null;
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    private ?Categories $categories = null;
 
-    #[ORM\Column(length: 50, nullable: true)]
-    private ?string $categorie = null;
+    #[ORM\ManyToOne(inversedBy: 'nom')]
+    private ?Auteur $auteur = null;
+
+    /**
+     * @var Collection<int, Commentaires>
+     */
+    #[ORM\OneToMany(targetEntity: Commentaires::class, mappedBy: 'articles')]
+    private Collection $commentaires;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -70,26 +83,56 @@ class Articles
         return $this;
     }
 
-    public function getAuteur(): ?string
+    public function getCategories(): ?Categories
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?Categories $categories): static
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    public function getAuteur(): ?Auteur
     {
         return $this->auteur;
     }
 
-    public function setAuteur(string $auteur): static
+    public function setAuteur(?Auteur $auteur): static
     {
         $this->auteur = $auteur;
 
         return $this;
     }
 
-    public function getCategorie(): ?string
+    /**
+     * @return Collection<int, Commentaires>
+     */
+    public function getCommentaires(): Collection
     {
-        return $this->categorie;
+        return $this->commentaires;
     }
 
-    public function setCategorie(?string $categorie): static
+    public function addCommentaire(Commentaires $commentaire): static
     {
-        $this->categorie = $categorie;
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires->add($commentaire);
+            $commentaire->setArticles($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaires $commentaire): static
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getArticles() === $this) {
+                $commentaire->setArticles(null);
+            }
+        }
 
         return $this;
     }
