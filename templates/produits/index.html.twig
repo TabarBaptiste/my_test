@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>Liste des produits</h1>
+    <div class="row">
+        {% for produit in produits %}
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ produit.title }}</h2>
+                    <p class="card-text">{{ produit.description }}</p>
+                    <p class="card-text">{{ produit.dateCreated|date('d/m/Y') }}</p>
+                    <p class="btn btn-primary"><a href="{{ path('app_product_show', {'id': produit.id}) }}">Détails du produit</a></p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

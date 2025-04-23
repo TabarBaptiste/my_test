@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>Listes</h1>
+    <h2>Liste des produits</h2>
+    <div class="row">
+        {% for produit in produits %}
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ produit.title }}</h2>
+                    <p class="card-text">{{ produit.description }}</p>
+                    <p class="card-text">{{ produit.dateCreated|date('d/m/Y') }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h2>Liste des derniers articles</h2>
+    <div class="row">
+        {% for article in articles %}
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ article.title }}</h2>
+                    <p class="card-text">{{ article.description }}</p>
+                    <p class="card-text">{{ article.dateCreated|date('d/m/Y') }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
