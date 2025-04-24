@@ -8,7 +8,7 @@ use App\Entity\Product;
 
 class ProduitTest extends KernelTestCase
 {
-    public function testEntityValid(): void {
+    public function testEntityInvalid(): void {
         self::bootKernel();
 
         $container = static::getContainer();
@@ -19,7 +19,7 @@ class ProduitTest extends KernelTestCase
 
         $errors = $container->get('validator')->validate($product);
 
-        $this->assertCount(0, $errors);
-        // $this->assertEquals(0, count($errors));
+        $this->assertCount(1, $errors);
+        $this->assertSame('le titre ne peut pas être vide', $errors[0]->getMessage());
     }
 }
