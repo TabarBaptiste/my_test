@@ -159,30 +159,30 @@ php bin/phpunit tests/Fonctionnel/MonTest.php
 
 | Commande                                          | Description                                                                 |
 |--------------------------------------------------|-----------------------------------------------------------------------------|
-| `symfony serve                                    | Démarre le serveur local Symfony                                           |
-| `symfony serve -d                                 | Démarre le serveur en arrière-plan                                         |
-| `php bin/console cache:clear                      | Vide le cache Symfony                                                      |
-| `php bin/console make:form                        | Génère un formulaire Symfony à partir d’une entité                         |
-| `php bin/console make:crud                        | Crée le CRUD complet pour une entité (formulaire, vues, contrôleur)       |
-| `php bin/console make:entity                      | Crée ou modifie une entité (avec les relations OneToMany, ManyToOne...)   |
-| `php bin/console make:controller                  | Génère un contrôleur Symfony avec sa vue associée                         |
-| `php bin/console make:repository                  | Génère un Repository manquant pour une entité                             |
-| `php bin/console make:subscriber                  | Crée un EventSubscriber personnalisé                                       |
-| `php bin/console make:command                     | Crée une commande Symfony personnalisée                                   |
-| `php bin/console make:fixture                     | Crée une classe pour insérer des données de test                          |
-| `php bin/console doctrine:fixtures:load           | Charge les fixtures en base (⚠️ supprime d'abord les données existantes)  |
-| `php bin/console make:migration                   | Génère le fichier SQL suite à un changement d’entité                      |
-| `php bin/console doctrine:migrations:migrate      | Applique les modifications de la base via les migrations                  |
-| `php bin/console doctrine:schema:validate         | Vérifie la cohérence entités / base de données                            |
-| `php bin/console doctrine:database:create         | Crée la base de données définie dans le .env                              |
-| `php bin/console debug:router                     | Liste toutes les routes Symfony connues                                   |
-| `php bin/console debug:container                  | Liste les services disponibles dans le conteneur                          |
-| `php bin/console make:test                        | Crée un test (TestCase, WebTestCase, etc.)                                |
-| `php bin/phpunit                                  | Exécute les tests PHPUnit                                                  |
-| `php bin/console lint:twig                        | Analyse les fichiers Twig à la recherche d’erreurs de syntaxe             |
-| `php bin/console lint:yaml                        | Analyse les fichiers YAML                                                  |
-| `php bin/console about                            | Donne des infos sur l’environnement Symfony actuel                         |
-| `php bin/console server:status                    | Affiche le statut du serveur Symfony local                                |
+| `symfony serve`                                    | Démarre le serveur local Symfony                                           |
+| `symfony serve -d`                                 | Démarre le serveur en arrière-plan                                         |
+| `php bin/console cache:clear`                      | Vide le cache Symfony                                                      |
+| `php bin/console make:form`                        | Génère un formulaire Symfony à partir d’une entité                         |
+| `php bin/console make:crud`                        | Crée le CRUD complet pour une entité (formulaire, vues, contrôleur)       |
+| `php bin/console make:entity`                      | Crée ou modifie une entité (avec les relations OneToMany, ManyToOne...)   |
+| `php bin/console make:controller`                  | Génère un contrôleur Symfony avec sa vue associée                         |
+| `php bin/console make:repository`                  | Génère un Repository manquant pour une entité                             |
+| `php bin/console make:subscriber`                  | Crée un EventSubscriber personnalisé                                       |
+| `php bin/console make:command`                     | Crée une commande Symfony personnalisée                                   |
+| `php bin/console make:fixture`                     | Crée une classe pour insérer des données de test                          |
+| `php bin/console doctrine:fixtures:load`           | Charge les fixtures en base (⚠️ supprime d'abord les données existantes)  |
+| `php bin/console make:migration`                   | Génère le fichier SQL suite à un changement d’entité                      |
+| `php bin/console doctrine:migrations:migrate`      | Applique les modifications de la base via les migrations                  |
+| `php bin/console doctrine:schema:validate`         | Vérifie la cohérence entités / base de données                            |
+| `php bin/console doctrine:database:create`         | Crée la base de données définie dans le .env                              |
+| `php bin/console debug:router`                     | Liste toutes les routes Symfony connues                                   |
+| `php bin/console debug:container`                  | Liste les services disponibles dans le conteneur                          |
+| `php bin/console make:test`                        | Crée un test (TestCase, WebTestCase, etc.)                                |
+| `php bin/phpunit`                                  | Exécute les tests PHPUnit                                                  |
+| `php bin/console lint:twig`                        | Analyse les fichiers Twig à la recherche d’erreurs de syntaxe             |
+| `php bin/console lint:yaml`                        | Analyse les fichiers YAML                                                  |
+| `php bin/console about`                            | Donne des infos sur l’environnement Symfony actuel                         |
+| `php bin/console server:status`                    | Affiche le statut du serveur Symfony local                                |
 
 
 <!-- ## 🔁 Exemple complet de flux de travail
