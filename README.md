@@ -13,6 +13,11 @@ Ce fichier est un pense-bête pour retrouver facilement les commandes Symfony co
 
 ---
 
+## 💻 Création du projet Symfony
+```bash
+symfony new nom_projet --version="7.2.x" --webapp
+```
+
 ## 📄 Configuration du `.env` (ex: `.env.dev`)
 
 ```env
